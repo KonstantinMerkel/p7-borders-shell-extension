@@ -380,7 +380,13 @@ export class BorderManager {
         // will be fired again once the the new size is allocated. That's
         // queued and coalesced, so that draws it smoothly. This removes
         // artifacting and makes smooth consistent borders during resize.
-        this._hideBorder(windowData);
+        // This can cause it's own artifacts, as minor blinks.
+        // this._hideBorder(windowData);
+
+        // Let's just redraw the border entirely right away, it's not that
+        // costly but provides the smoothest experience.
+        this._pending.clearSync(metaWindow);
+        this.syncBorder(metaWindow, windowData);
       },
       this,
     );
