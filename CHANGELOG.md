@@ -2,6 +2,10 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [36] - 2025-02-02
+
+- Even smoother resizing, with immediate commit.
+
 ## [35] - 2025-01-24
 
 - Size change logic tweaks to workaround artifacts for smooth resize.
