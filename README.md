@@ -112,7 +112,6 @@ Each config can define:
 - `margins` (number or `{ top, right, bottom, left }`)
 - `radius` (number or `{ tl, tr, br, bl }`)
 - `activeColor` / `inactiveColor` (string)
-- `maximizedBorder` (bool)
 
 Example `app-configs` JSON:
 
@@ -124,7 +123,7 @@ Example `app-configs` JSON:
   },
   "@default": { "width": 3 },
   "class:org.gnome.Terminal": "@gtkPreset",
-  "class:foot": { "margins": { "top": 27 }, "maximizedBorder": true }
+  "class:foot": { "margins": { "top": 27 } }
 }
 ```
 

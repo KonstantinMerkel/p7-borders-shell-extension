@@ -510,7 +510,6 @@ function computeBorderState(windowState, config) {
     box,
     frame,
     buffer,
-    scale,
     workarea,
     isFullscreen,
     maximize,

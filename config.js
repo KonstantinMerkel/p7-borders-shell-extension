@@ -118,8 +118,7 @@ export class ConfigManager {
     // source of truth.
     return {
       // Presets
-      "@zeroPreset": { maximizedBorder: true },
-      "@zeroNoMaxPreset": { maximizedBorder: false },
+      "@zeroPreset": {},
       "@adwPreset": {
         radius: 18,
       },
@@ -131,9 +130,6 @@ export class ConfigManager {
       },
       "@chromePreset": {
         radius: { tl: 12, tr: 12, br: 0, bl: 0 },
-      },
-      "@chromeGtkPreset": {
-        radius: { tl: 10, tr: 10, br: 0, bl: 0 },
       },
       "@zedPreset": {
         margins: { right: -1, bottom: -1 },
@@ -170,11 +166,11 @@ export class ConfigManager {
       "class:gnome-disks": "@gtkPreset",
       // "class:org.pulseaudio.pavucontrol": "@gtkPreset",
       // Chrome
-      "regex.class:^google-chrome*": "@chromePreset",
+      "regex.class:^google-chrome": "@chromePreset",
       // Chrome apps
-      "regex.class:^chrome-*": "@chromePreset",
+      "regex.class:^chrome-": "@chromePreset",
       // Chromium
-      "regex.class:^chromium*": "@chromePreset",
+      "regex.class:^chromium": "@chromePreset",
       // Electron
       "class:obsidian": "@zeroPreset",
       "class:zulip": "@zeroPreset",
@@ -183,6 +179,10 @@ export class ConfigManager {
       "class:antigravity": "@zeroPreset",
       "class:spotify": "@zeroPreset",
       "class:discord": "@zeroPreset",
+      // Other chormium browsers
+      "class:microsoft-edge": "@chromePreset",
+      "class:brave-browser": "@chromePreset",
+      "regex.class:^vivaldi": "@zeroPreset",
       // Qt
       "class:vlc": "@qtPreset",
       "class:krita": "@qtPreset",

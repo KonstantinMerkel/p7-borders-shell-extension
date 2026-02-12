@@ -162,7 +162,6 @@ function getPresetConfig(rawConfigs, presetKey) {
 
 function createConfigEditor() {
   const enabledRow = new Adw.SwitchRow({ title: "Enabled" });
-  const maximizedRow = new Adw.SwitchRow({ title: "Show when maximized" });
   const widthRow = createSpinRow({
     title: "Border width",
     lower: 0,
@@ -231,7 +230,6 @@ function createConfigEditor() {
 
   const customRows = [
     enabledRow,
-    maximizedRow,
     widthRow,
     marginsTopRow,
     marginsRightRow,
@@ -257,7 +255,6 @@ function createConfigEditor() {
     const radius = isObject(config.radius) ? config.radius : {};
     updating = true;
     enabledRow.active = config.enabled ?? true;
-    maximizedRow.active = config.maximizedBorder ?? false;
     widthRow.value = config.width ?? 0;
     marginsTopRow.value = margins.top ?? 0;
     marginsRightRow.value = margins.right ?? 0;
@@ -282,12 +279,6 @@ function createConfigEditor() {
       if (updating || !isCustom()) return;
       setConfigValue((config) => {
         config.enabled = enabledRow.active;
-      });
-    });
-    maximizedRow.connect("notify::active", () => {
-      if (updating || !isCustom()) return;
-      setConfigValue((config) => {
-        config.maximizedBorder = maximizedRow.active;
       });
     });
     widthRow.connect("notify::value", () => {
