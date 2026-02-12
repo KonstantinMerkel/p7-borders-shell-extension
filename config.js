@@ -148,6 +148,7 @@ export class ConfigManager {
       "class:org.gnome.seahorse.Application": "@gtkPreset",
       "class:org.gnome.Connections": "@gtkPreset",
       "class:firefox": "@gtkPreset",
+      "class:firefox-esr": "@gtkPreset",
       "class:io.ente.auth": "@gtkPreset",
       "class:dconf-editor": "@gtkPreset",
       "class:org.gimp.GIMP": "@gtkPreset",
