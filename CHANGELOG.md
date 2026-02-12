@@ -2,6 +2,10 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [37] - 2026-02-12
+
+- Remove maximized borders per app config; superseded by smart borders.
+
 ## [36] - 2025-02-02
 
 - Even smoother resizing, with immediate commit.
