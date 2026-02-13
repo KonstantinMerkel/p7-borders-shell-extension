@@ -4,7 +4,7 @@ Add per-window borders in GNOME Shell with per-side margins, per-corner radii,
 and edge-aware hiding. Makes mutter attach borders to each window actor
 efficiently with cached inline styles in the compositor.
 
-- Compatibility: GNOME Shell 48+.
+- Compatibility: GNOME Shell 49+.
 - Best effort compatibility: GNOME Shell 45+.
 - Extension Store:
   https://extensions.gnome.org/extension/9064/p7-window-borders/
@@ -148,6 +148,15 @@ This default for this extension is to use an opt-in model (Can be changed). Only
 apps that match an entry in `app-configs` get borders, so anything not in the
 whitelist stays unmodified. This avoids unintended borders on apps where
 client-side decorations or insets would look wrong.
+
+### Tips for GNOME 45-48
+
+Enable `Enable by default` in extension preferences. If you are on GNOME Shell
+versions before 49, turn on `Enable by default` in preferences. The shipped
+config and presets are tuned for GNOME 49+, so on older versions many common
+windows may not be covered by the default app list. GNOME also uses Adw more
+consistenly and with wmclass names org.gnome.* in GNOME 49+, so only ship those
+for default config.
 
 ### How do I add config so that an application gets borders?
 
