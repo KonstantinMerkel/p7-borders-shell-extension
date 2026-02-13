@@ -151,12 +151,16 @@ client-side decorations or insets would look wrong.
 
 ### Tips for GNOME 45-48
 
-Enable `Enable by default` in extension preferences. If you are on GNOME Shell
-versions before 49, turn on `Enable by default` in preferences. The shipped
-config and presets are tuned for GNOME 49+, so on older versions many common
-windows may not be covered by the default app list. GNOME also uses Adw more
-consistenly and with wmclass names org.gnome.* in GNOME 49+, so only ship those
-for default config.
+- Turn on `Enable by default` in preferences.
+
+The shipped config and presets are tuned for GNOME 49+, so on older versions
+many common windows may not be covered by the default app list. GNOME also uses
+Adw more consistenly and with wmclass names org.gnome.* in GNOME 49+, so we only
+ship those for default config. You can always add the apps you want to the
+whitelist config or just live with the small default set that's already covered,
+but enabling just makes for a slightly better experience. The disadvantage is
+that we might not have nicely rounded borders that match the windows for these
+windows.
 
 ### How do I add config so that an application gets borders?
 
