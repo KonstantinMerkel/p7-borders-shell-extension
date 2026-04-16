@@ -166,6 +166,7 @@ export class ConfigManager {
       "class:com.github.xournalpp.xournalpp": "@gtkPreset",
       "class:gnome-disks": "@gtkPreset",
       "class:blender": "@gtkPreset",
+      "class:fr.handbrake.ghb": "@gtkPreset",
       // "class:org.pulseaudio.pavucontrol": "@gtkPreset",
       // Chrome
       "regex.class:^google-chrome": "@chromePreset",
