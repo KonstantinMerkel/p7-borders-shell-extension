@@ -192,6 +192,7 @@ export class ConfigManager {
       "class:qpwgraph": "@qtPreset",
       "class:org.kde.kdenlive": "@qtPreset",
       "class:org.shotcut.Shotcut": "@qtPreset",
+      "class:com.obsproject.Studio": "@qtPreset",
       // Others
       "class:dev.zed.Zed": "@zedPreset",
       "class:mpv": "@zeroPreset",
