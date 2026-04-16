@@ -173,6 +173,7 @@ export class ConfigManager {
       // Chromium
       "regex.class:^chromium": "@chromePreset",
       // Electron
+      "class:electron": "@zeroPreset",
       "class:obsidian": "@zeroPreset",
       "class:zulip": "@zeroPreset",
       "class:slack": "@zeroPreset",
@@ -206,7 +207,7 @@ export class ConfigManager {
   _ensureDefaults() {
     // Check if this is the first run by looking at config-version
     const configVersion = this._settings.get_int("config-version");
-    const currentRevision = 8;
+    const currentRevision = 9;
 
     if (configVersion < currentRevision) {
       this._logger.log(
