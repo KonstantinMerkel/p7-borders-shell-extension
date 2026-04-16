@@ -165,6 +165,7 @@ export class ConfigManager {
       "class:solaar": "@gtkPreset",
       "class:com.github.xournalpp.xournalpp": "@gtkPreset",
       "class:gnome-disks": "@gtkPreset",
+      "class:blender": "@gtkPreset",
       // "class:org.pulseaudio.pavucontrol": "@gtkPreset",
       // Chrome
       "regex.class:^google-chrome": "@chromePreset",
@@ -189,6 +190,8 @@ export class ConfigManager {
       "class:vlc": "@qtPreset",
       "class:krita": "@qtPreset",
       "class:qpwgraph": "@qtPreset",
+      "class:org.kde.kdenlive": "@qtPreset",
+      "class:org.shotcut.Shotcut": "@qtPreset",
       // Others
       "class:dev.zed.Zed": "@zedPreset",
       "class:mpv": "@zeroPreset",
