@@ -125,6 +125,12 @@ export class ConfigManager {
       "@gtkPreset": {
         radius: { tl: 10, tr: 10, br: 0, bl: 0 },
       },
+      "@csdPreset12": {
+        radius: { tl: 12, tr: 12, br: 0, bl: 0 },
+      },
+      "@csdPreset18": {
+        radius: { tl: 18, tr: 18, br: 0, bl: 0 },
+      },
       "@qtPreset": {
         radius: { tl: 18, tr: 18, br: 0, bl: 0 },
       },
@@ -137,6 +143,7 @@ export class ConfigManager {
       },
       // Adw
       "regex.class:^org.gnome.*": "@adwPreset",
+      "class:org.gnome.Boxes": { radius: 12 },
       // "regex.class:^org.freedesktop.*": "@adwPreset",
       "class:com.github.tchx84.Flatseal": "@adwPreset",
       "class:simple-scan": "@adwPreset",
@@ -147,8 +154,12 @@ export class ConfigManager {
       "class:org.gnome.Terminal": "@gtkPreset",
       "class:org.gnome.seahorse.Application": "@gtkPreset",
       "class:org.gnome.Connections": "@gtkPreset",
-      "class:firefox": "@gtkPreset",
-      "class:firefox-esr": "@gtkPreset",
+      "regex.class:firefox": "@csdPreset12",
+      "regex.class:thunderbird": "@csdPreset12",
+      "regex.class:keepassxc": "@csdPreset12",
+      "regex.class:rstudio": "@csdPreset18",
+      "regex.class:ferdium": "@csdPreset18",
+      "regex.class:arduino": "@csdPreset18",
       "class:io.ente.auth": "@gtkPreset",
       "class:dconf-editor": "@gtkPreset",
       "class:org.gimp.GIMP": "@gtkPreset",
@@ -212,18 +223,13 @@ export class ConfigManager {
   _ensureDefaults() {
     // Check if this is the first run by looking at config-version
     const configVersion = this._settings.get_int("config-version");
-    const currentRevision = 9;
+    const currentRevision = 12;
 
     if (configVersion < currentRevision) {
       this._logger.log(
-        "Config reset needed, saving default configuration values",
+        "Config reset needed, updating app-configs to new presets",
       );
 
-      // Reset all keys to schema defaults.
-      const keys = this._settings.settings_schema.list_keys();
-      for (const key of keys) {
-        this._settings.reset(key);
-      }
       // app-configs, we need it to be prepopulated for
       // easy editing.
       this._settings.set_string(
@@ -234,7 +240,7 @@ export class ConfigManager {
       // Update config version to indicate defaults have been saved
       this._settings.set_int("config-version", currentRevision);
 
-      this._logger.log("Default configuration values saved to dconf");
+      this._logger.log("Default app-configs saved to dconf");
     }
   }
 
